@@ -128,10 +128,11 @@ public class Trie {
         }
         if (DeleteFlag == -1)
             if (removeByDFS(node.next.get(word.charAt(i)), word, i + 1)) {
-                if (DeleteFlag == 1 && node.next.size() == 1) {
-                    node.next.clear();
-                } else
-                    DeleteFlag = 0;
+                if (DeleteFlag == 1)
+                    if (node.next.size() == 1)
+                        node.next.clear();
+                    else
+                        DeleteFlag = 0;
                 return true;
             }
         return false;
@@ -140,8 +141,8 @@ public class Trie {
     public boolean remove(String word) {
         if (word == null || word.length() == 0)
             throw new RuntimeException("非法参数！");
-        DeleteFlag=-1;
-        return removeByDFS(root,word,0);
+        DeleteFlag = -1;
+        return removeByDFS(root, word, 0);
     }
 
     private static class Node {
