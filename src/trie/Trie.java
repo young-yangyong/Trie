@@ -131,8 +131,10 @@ public class Trie {
                 if (DeleteFlag == 1)
                     if (node.next.size() == 1)
                         node.next.clear();
-                    else
+                    else{
+                        node.next.remove(word.charAt(i));
                         DeleteFlag = 0;
+                    }
                 return true;
             }
         return false;

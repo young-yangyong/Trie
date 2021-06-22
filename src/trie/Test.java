@@ -14,7 +14,7 @@ public class Test{
         System.out.println(trie.getWordsByPrefix("*"));
         System.out.println(trie.getWordsByPrefix("B"));
         System.out.println(trie.getWordsByPrefix("a"));
-        System.out.println(trie.remove("ab"));
+        System.out.println(trie.remove("abcde"));
         System.out.println(trie.getWordsByPrefix("*"));
 
     }
